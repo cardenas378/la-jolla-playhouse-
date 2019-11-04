@@ -13,7 +13,7 @@ const NavBar = () => (
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/AddLocation">Add Location</Link>
+        <Link to="/Locations">Locations</Link>
       </li>
     </ol>
     <ol className="btm-nav">

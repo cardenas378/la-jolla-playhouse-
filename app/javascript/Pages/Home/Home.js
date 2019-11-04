@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -10,15 +11,7 @@ class Home extends React.Component {
   // }
 
   render() {
-<<<<<<< HEAD
-    return (
-      <>
-        Home Page
-      </>
-    );
-=======
     return <p>Dashboard</p>;
->>>>>>> adds_location_table
   }
 }
 export { Home };

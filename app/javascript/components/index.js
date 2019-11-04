@@ -5,6 +5,7 @@ import { FormSectionHeader } from "./FormSectionHeader";
 import { Header } from "./Header";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
+import { Location } from "./Location";
 import {
   FullInput,
   StyledSelect,
@@ -23,5 +24,6 @@ export {
   RadioButton,
   FullInput,
   HalfInput,
-  ThirdInput
+  ThirdInput,
+  Location
 };

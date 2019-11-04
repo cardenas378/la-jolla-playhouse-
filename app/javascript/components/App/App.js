@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components/macro";
 
 import { Home } from "../../Pages/Home";
+import { Locations } from "../../Pages/Locations";
 import { AddLocation } from "../AddLocation";
 import { getLocations, createLocation } from "../api";
 import { NavBar } from "../NavBar";
