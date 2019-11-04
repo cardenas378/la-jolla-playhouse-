@@ -73,10 +73,10 @@ class App extends React.Component {
 
               <Route
                 exact
-                path="/"
+                path="/Locations"
                 render={props => {
                   return (
-                    <Home
+                    <Locations
                       {...props}
                       changeSuccess={this.changeSuccess}
                       locations={this.state.locations}
@@ -85,6 +85,22 @@ class App extends React.Component {
                   );
                 }}
               />
+
+              <Route
+              exact
+              path="/"
+              render={props => {
+                return (
+                  <Home
+                  {...props}
+                  changeSuccess={this.changeSuccess}
+                  locations={this.state.locations}
+                  success={this.state.success}
+                  />
+                );
+              }}
+              />
+
             </main>
           </Router>
         </StyledLayout>
