@@ -10,11 +10,15 @@ class Home extends React.Component {
   // }
 
   render() {
+<<<<<<< HEAD
     return (
       <>
         Home Page
       </>
     );
+=======
+    return <p>Dashboard</p>;
+>>>>>>> adds_location_table
   }
 }
 export { Home };
