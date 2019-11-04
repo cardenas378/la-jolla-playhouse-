@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getLocations, createLocation } from "../../components/api";
-import { Header, AddLocation, SubmitButton } from "../..components/index";
-
+import { Header, AddLocation, SubmitButton } from "../../components/index";
+import { Location } from "../../components/Location"
 class Locations extends React.Component {
   componentDidMount() {
     this.props.changeSuccess(false);
@@ -15,9 +15,7 @@ class Locations extends React.Component {
 
         {this.props.locations.map(location => {
           return (
-            <div key={location.id} style={{ border: "1px black solid" }}>
-              <h1>Location: {location.name}</h1>;
-            </div>
+            <Location key={location.id} />
           );
         })}
       </>

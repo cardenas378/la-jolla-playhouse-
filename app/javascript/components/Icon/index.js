@@ -15,3 +15,6 @@ const Icon = props => {
 };
 
 export { Icon };
+
+// implementation will look like
+// <Icon name="chevron" />

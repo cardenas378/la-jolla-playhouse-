@@ -11,4 +11,11 @@ const StyledLabel = styled.label`
   margin-bottom: 3px;
 `;
 
-export { StyledLabel };
+const StyledCardLabel = styled.h5`
+  font-family: ${props => props.theme.sansSerif};
+  line-height: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: ${props => props.theme.weightBold};
+`;
+
+export { StyledLabel, StyledCardLabel };

@@ -8,13 +8,10 @@ const StyledLocationCard = styled.div`
   border-radius: 10px;
   width: 1100px;
   height: 170px;
-  padding-left: 35px;
+  padding-left: 45px;
   padding-top: 25px;
-  text {
-    margin-top: 20px;
-    margin-left: 45px;
-    font-family: ${props => props.theme.sansSerif};
-    font-weight: ${props => props.theme}
+  h5 {
+    margin-bottom: 0px;
   }
 `;
 
