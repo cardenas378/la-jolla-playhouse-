@@ -19,6 +19,7 @@ const Theme = {
   success: "#29a028",
   warning: "#f7df5a",
   error: "#b92121",
+  tarawera: "#14345b",
   // typography
   nunito: "Nunito Sans, sansSerif",
   georgia: "georgia, serif",

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const StyledSubmitButton = styled.button`
   background: ${props => props.theme.crayonOrange};
   border-radius: 50px;
   width: 230px;
@@ -14,4 +14,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export { StyledButton };
+export { StyledSubmitButton };

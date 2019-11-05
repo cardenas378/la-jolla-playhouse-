@@ -45,18 +45,20 @@ class AddLocation extends React.Component {
       }
     };
   }
+  
+  componentDidMount() {
+    this.props.changeRedirect(false);
+  }
 
   handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
-
     form[name] = value;
     this.setState({ form });
   };
 
   handleClick = () => {
     const { form } = this.state;
-
     this.props.handleNewLocation(form);
   };
 
@@ -330,7 +332,7 @@ class AddLocation extends React.Component {
                   Submit
                 </SubmitButton>
               </div>
-              // {success && <Redirect to="/" />}
+              {success && <Redirect to="/" />}
             </StyledFormLayout>
           </form>
         </StyledSlideOutPanel>
