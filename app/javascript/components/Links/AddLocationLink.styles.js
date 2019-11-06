@@ -9,11 +9,9 @@ const StyledAddLocationLink = styled.div`
   top: 15px;
   right: 90px;
   position: absolute;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
   span {
     color: white;
     font-family: ${props => props.theme.sansSerif};

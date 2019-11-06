@@ -7,10 +7,8 @@ import { StyledAddLocationLink } from "./AddLocationLink.styles";
 const AddLocationLink = () => (
   <Link to="/AddLocation">
     <StyledAddLocationLink>
-      <div>
         <Icon name="plus" />
         <span>ADD A LOCATION</span>
-      </div>
     </StyledAddLocationLink>
   </Link>
 );
