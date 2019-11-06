@@ -13,21 +13,21 @@ const StyledLabel = styled.label`
 
 const StyledCardLabel = styled.h5`
   font-family: ${props => props.theme.sansSerif};
-  line-height: 1.3rem;
+  line-height: 135%;
   font-size: 1.4rem;
   font-weight: ${props => props.theme.weightBold};
 `;
 
 const StyledCardTitle = styled.h2`
   font-family: ${props => props.theme.sansSerif};
-  line-height: 4.4rem;
+  line-height: 140%;
   font-size: 3.2rem;
   font-weight: ${props => props.theme.weightBold};
 `;
 
 const StyledTertiaryHeading = styled.h3`
   font-family: ${props => props.theme.georgia};
-  line-height: 2.3rem;
+  line-height: 165%;
   font-size: 1.4rem;
   font-weight: ${props => props.theme.weightRegular};
   letter-spacing: 0.09rem;
@@ -36,14 +36,14 @@ const StyledTertiaryHeading = styled.h3`
 
 const StyledCardMeta = styled.h4`
   font-family: ${props => props.theme.sansSerif};
-  line-height: 4rem;
+  line-height: 165%;
   font-size: 2.4rem;
   font-weight: ${props => props.theme.weightRegular};
 `;
 
 const StyledBodyCopy = styled.p`
   font-family: ${props => props.theme.georgia};
-  line-height: 2.9rem;
+  line-height: 160%;
   font-size: 1.8rem;
   font-weight: ${props => props.theme.weightRegular};
 `;

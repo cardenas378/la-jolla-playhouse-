@@ -36,10 +36,6 @@ class App extends React.Component {
     this.setState({ success: value });
   };
 
-  changeRedirect = value => {
-    this.setState({ redirect: value });
-  };
-
   componentDidMount() {
     getLocations().then(locations => {
       this.setState({ locations });
@@ -72,7 +68,6 @@ class App extends React.Component {
                       {...props}
                       handleNewLocation={this.handleNewLocation}
                       success={this.state.success}
-                      changeRedirect={this.changeRedirect}
                       redirect={this.state.redirect}
                     />
                   );
@@ -87,7 +82,6 @@ class App extends React.Component {
                     <Locations
                       {...props}
                       changeSuccess={this.changeSuccess}
-                      changeRedirect={this.changeRedirect}
                       locations={this.state.locations}
                       success={this.state.success}
                       redirect={this.state.redirect}

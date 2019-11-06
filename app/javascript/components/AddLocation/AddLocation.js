@@ -45,10 +45,6 @@ class AddLocation extends React.Component {
       }
     };
   }
-  
-  componentDidMount() {
-    this.props.changeRedirect(false);
-  }
 
   handleChange = e => {
     const { form } = this.state;
@@ -116,12 +112,12 @@ class AddLocation extends React.Component {
                     value="school"
                   />
                   <RadioButton
-                    id="non-school"
-                    label="Non-School"
+                    id="non-profit"
+                    label="Non-Profit"
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="non-school"
+                    value="non-profit"
                   />
                   <RadioButton
                     id="corporate"
@@ -332,7 +328,7 @@ class AddLocation extends React.Component {
                   Submit
                 </SubmitButton>
               </div>
-              {success && <Redirect to="/" />}
+              {success && <Redirect to="/Locations" />}
             </StyledFormLayout>
           </form>
         </StyledSlideOutPanel>

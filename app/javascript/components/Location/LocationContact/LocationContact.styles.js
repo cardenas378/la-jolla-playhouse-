@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 const StyledLocationContact = styled.div`
   width: 710px;
-  height: 60px;
   padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
+  postition: relative;
+  margin-bottom: 10px;
   div {
     flex: 1;
+    justify-content: space-between;
+
   }
 
   svg {
@@ -20,21 +22,24 @@ const StyledLocationContact = styled.div`
     top: 5px;
   }
 
+  h3 {
+    margin: 0;
+    position: absolute;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
   p {
     margin: 0;
     padding: 0;
-  }
-  h4 {
-    margin-bottom: 0px;
-    margin-top: 0px;
     display: flex;
     justify-content: space-between;
-  }
-  h6 {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0px;
   }
 `;
 

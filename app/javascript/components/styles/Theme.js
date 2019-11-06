@@ -20,6 +20,9 @@ const Theme = {
   warning: "#f7df5a",
   error: "#b92121",
   tarawera: "#14345b",
+  lightSteelBlue: "#adc4de",
+  yaleBlue: "#1e4e88",
+  oxfordBlue: "#0c233d",
   // typography
   nunito: "Nunito Sans, sansSerif",
   georgia: "georgia, serif",

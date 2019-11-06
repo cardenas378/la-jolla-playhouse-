@@ -1,6 +1,7 @@
 import { AddLocation } from "./AddLocation";
 import { App } from "./App";
-import { SubmitButton, AddLocationButton } from "./Buttons";
+import { SubmitButton } from "./Buttons";
+import { AddLocationLink } from "./Links";
 import { FormSectionHeader } from "./FormSectionHeader";
 import { Header } from "./Header";
 import { Logo } from "./Logo";
@@ -17,7 +18,7 @@ export {
   App,
   AddLocation,
   SubmitButton,
-  AddLocationButton,
+  AddLocationLink,
   StyledSelect,
   FormSectionHeader,
   Header,

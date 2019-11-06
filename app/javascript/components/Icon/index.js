@@ -4,6 +4,7 @@ import { Chevron } from "./Chevron";
 import { Search } from "./Search";
 import { Phone } from "./Phone";
 import { Email } from "./Email";
+import { Plus } from "./Plus";
 
 const Icon = props => {
   switch (props.name.toLowerCase()) {
@@ -13,6 +14,8 @@ const Icon = props => {
       return <Email {...props} />;
     case "phone":
       return <Phone {...props} />;
+    case "plus":
+      return <Plus {...props} />;
     case "search":
       return <Search {...props} />;
     default:
