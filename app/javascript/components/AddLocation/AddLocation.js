@@ -330,7 +330,6 @@ class AddLocation extends React.Component {
                   Submit
                 </SubmitButton>
               </div>
-              {success && <Redirect to="/Locations" />}
             </StyledFormLayout>
           </form>
         </StyledSlideOutPanel>
