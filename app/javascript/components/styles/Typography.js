@@ -27,7 +27,7 @@ const StyledCardTitle = styled.h2`
 
 const StyledTertiaryHeading = styled.h3`
   font-family: ${props => props.theme.georgia};
-  line-height: 165%;
+  line-height: 100%;
   font-size: 1.4rem;
   font-weight: ${props => props.theme.weightRegular};
   letter-spacing: 0.09rem;
@@ -36,7 +36,7 @@ const StyledTertiaryHeading = styled.h3`
 
 const StyledCardMeta = styled.h4`
   font-family: ${props => props.theme.sansSerif};
-  line-height: 165%;
+  line-height: 100%;
   font-size: 2.4rem;
   font-weight: ${props => props.theme.weightRegular};
 `;

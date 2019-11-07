@@ -6,10 +6,6 @@ import { AddLocation } from "../../components/AddLocation";
 import { getLocations, createLocation } from "../../components/api";
 
 class Home extends React.Component {
-  // componentDidMount() {
-  //   this.props.changeSuccess(false);
-  // }
-
   render() {
     return <p>Dashboard</p>;
   }

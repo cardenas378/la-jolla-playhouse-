@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledHeader = styled.header`
   background-color: ${props => props.theme.funBlue};
   border-radius: 0px 0px 0 30px;
-  padding: 40px 30px 90px;
+  padding: 40px 30px;
 
   h1 {
     color: ${props => props.theme.broom};
@@ -15,6 +15,16 @@ const StyledHeader = styled.header`
     margin: 0;
     padding: 0;
   }
+
+  &.with-overlap {
+    padding-bottom: 100px;
+  }
 `;
 
-export { StyledHeader };
+const StyledHeaderButton = styled.div`
+  position: absolute;
+  right: 30px;
+  top: 25px;
+`;
+
+export { StyledHeader, StyledHeaderButton };

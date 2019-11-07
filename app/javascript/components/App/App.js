@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Link
+} from "react-router-dom";
 
 import styled, { ThemeProvider } from "styled-components/macro";
 
@@ -18,9 +23,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       locations: [],
-      success: false,
-      redirect: false
+      success: false
     };
+  }
+
+  // getLocations() {
+  //   .then(locations => {
+  //     this.setState({locations})
+  // //     return response.json()
+  //   })
+  // }
+
+  componentDidMount() {
+    getLocations().then(locations => {
+      this.setState({ locations });
+    });
   }
 
   handleNewLocation = location => {
@@ -36,20 +53,10 @@ class App extends React.Component {
     this.setState({ success: value });
   };
 
-  componentDidMount() {
-    getLocations().then(locations => {
-      this.setState({ locations });
-    });
-  }
-
-  // componentDidUpdate(prevState) {
-  //     if(prevState.locations != this.state.locations) {
-  //         this.setState({success: false})
-  //     }
-  // }
-
   render() {
-    const { locations } = this.state;
+    const { locations, success } = this.state;
+
+    console.log(this.state.success);
 
     return (
       <ThemeProvider theme={Theme}>
@@ -67,8 +74,7 @@ class App extends React.Component {
                     <AddLocation
                       {...props}
                       handleNewLocation={this.handleNewLocation}
-                      success={this.state.success}
-                      redirect={this.state.redirect}
+                      success={success}
                     />
                   );
                 }}
@@ -82,29 +88,20 @@ class App extends React.Component {
                     <Locations
                       {...props}
                       changeSuccess={this.changeSuccess}
-                      locations={this.state.locations}
-                      success={this.state.success}
-                      redirect={this.state.redirect}
+                      locations={locations}
+                      success={success}
                     />
                   );
                 }}
               />
 
               <Route
-              exact
-              path="/"
-              render={props => {
-                return (
-                  <Home
-                  {...props}
-                  changeSuccess={this.changeSuccess}
-                  locations={this.state.locations}
-                  success={this.state.success}
-                  />
-                );
-              }}
+                exact
+                path="/"
+                render={props => {
+                  return <Home {...props} />;
+                }}
               />
-
             </main>
           </Router>
         </StyledLayout>

@@ -49,12 +49,14 @@ class AddLocation extends React.Component {
   handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
+
     form[name] = value;
     this.setState({ form });
   };
 
   handleClick = () => {
     const { form } = this.state;
+
     this.props.handleNewLocation(form);
   };
 
@@ -82,10 +84,10 @@ class AddLocation extends React.Component {
     } = this.state.form;
     const { success } = this.props;
 
-    console.log(this.state.form);
+    // console.log(this.state.form);
     return (
       <>
-        <Header name="Add a Location" />
+        <Header className="with-overlap" name="Add a Location" />
 
         <StyledSlideOutPanel>
           <form>
@@ -109,7 +111,7 @@ class AddLocation extends React.Component {
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="school"
+                    value="School"
                   />
                   <RadioButton
                     id="non-profit"
@@ -117,7 +119,7 @@ class AddLocation extends React.Component {
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="non-profit"
+                    value="Non-Profit"
                   />
                   <RadioButton
                     id="corporate"
@@ -125,7 +127,7 @@ class AddLocation extends React.Component {
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="corporate"
+                    value="Corporate"
                   />
                 </div>
               </div>
@@ -141,7 +143,7 @@ class AddLocation extends React.Component {
                 />
               </div>
 
-              {location_type == "school" ? (
+              {location_type == "School" ? (
                 <>
                   <div className="third">
                     <StyledLabel>Principal Name</StyledLabel>

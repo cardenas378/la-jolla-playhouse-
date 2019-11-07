@@ -46,7 +46,7 @@ test("If Type is a school", () => {
   const school = shallow(<AddLocation />);
 
   school.find("#school").simulate("change", {
-    target: { name: "location_type", value: "school" }
+    target: { name: "location_type", value: "School" }
   });
 
   expect(school.find("#school_principal").exists()).toEqual(true);
@@ -54,11 +54,22 @@ test("If Type is a school", () => {
   expect(school.find("#school_district").exists()).toEqual(true);
 });
 
-test("If Type is not a school", () => {
+test("If Type is a non-profit", () => {
+  const other = shallow(<AddLocation />);
+
+  other.find("#corporate").simulate("change", {
+    target: { name: "location_type", value: "Corporate" }
+  });
+
+  expect(other.find("#county_district").exists()).toEqual(true);
+  expect(other.find("#city_district").exists()).toEqual(true);
+});
+
+test("If Type is a corporate", () => {
   const other = shallow(<AddLocation />);
 
   other.find("#non-profit").simulate("change", {
-    target: { name: "location_type", value: "non-profit" }
+    target: { name: "location_type", value: "Non-Profit" }
   });
 
   expect(other.find("#county_district").exists()).toEqual(true);

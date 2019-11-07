@@ -1,10 +1,13 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+
 import { Chevron } from "./Chevron";
-import { Search } from "./Search";
-import { Phone } from "./Phone";
 import { Email } from "./Email";
+import { Phone } from "./Phone";
 import { Plus } from "./Plus";
+import { Search } from "./Search";
+
+/* eslint complexity: ["error", { "max": 7 }]*/
 
 const Icon = props => {
   switch (props.name.toLowerCase()) {
@@ -24,9 +27,9 @@ const Icon = props => {
 };
 
 Icon.propTypes = {
+  name: PropTypes.string.isRequired,
   className: PropTypes.string,
   height: PropTypes.string,
-  name: PropTypes.string.isRequired,
   width: PropTypes.string
 };
 

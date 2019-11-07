@@ -1,19 +1,23 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-const StyledAddLocationLink = styled.div`
+const StyledAddLocationLink = styled(Link)`
   background: ${props => props.theme.tarawera};
   border-radius: 50px;
   width: 235px;
   height: 45px;
-  top: 15px;
-  right: 90px;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: ${props => props.theme.pureWhite};
+  &:hover {
+    text-decoration: none;
+    background: ${props => props.theme.broom};
+    color: ${props => props.theme.funBlue};
+  }
   span {
-    color: white;
     font-family: ${props => props.theme.sansSerif};
     text-align: center;
     font-weight: ${props => props.theme.weightBold};
@@ -24,7 +28,7 @@ const StyledAddLocationLink = styled.div`
     height: 20px;
     width: 20px;
     margin-right: 10px;
-    fill: ${props => props.theme.pureWhite};
+    fill: currentColor;
     position: relative;
   }
 `;

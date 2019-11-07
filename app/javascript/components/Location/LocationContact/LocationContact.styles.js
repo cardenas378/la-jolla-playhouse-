@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 const StyledLocationContact = styled.div`
-  width: 710px;
+  width: 100%;
   padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   postition: relative;
-  margin-bottom: 10px;
   div {
     flex: 1;
     justify-content: space-between;
-
   }
 
   svg {
@@ -21,20 +19,20 @@ const StyledLocationContact = styled.div`
     position: relative;
     top: 5px;
   }
-
+  /* "LOCATION CONTACT" HEADING */
   h3 {
-    margin: 0;
-    position: absolute;
+    margin: 0 0 5px;
   }
-
+  /* CONTACT NAME */
   h4 {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
     position: relative;
+    min-height: 30px;
   }
-
+  /* EMAIL AND PHONE NUMBER FIELDS */
   p {
     margin: 0;
     padding: 0;

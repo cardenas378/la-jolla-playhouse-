@@ -1,12 +1,12 @@
 import { AddLocation } from "./AddLocation";
 import { App } from "./App";
 import { SubmitButton } from "./Buttons";
-import { AddLocationLink } from "./Links";
 import { FormSectionHeader } from "./FormSectionHeader";
 import { Header } from "./Header";
+import { AddLocationLink } from "./Links";
+import { Location } from "./Location";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
-import { Location } from "./Location";
 import {
   FullInput,
   StyledSelect,
