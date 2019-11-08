@@ -18,7 +18,7 @@ class Locations extends React.Component {
 
     return (
       <>
-        <Header name="Locations">
+        <Header id="header" name="Locations">
           <AddLocationLink />
         </Header>
         {locations.map(location => {

@@ -55,7 +55,7 @@ class App extends React.Component {
 
   render() {
     const { locations, success } = this.state;
-    
+
     return (
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
