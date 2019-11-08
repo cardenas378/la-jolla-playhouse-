@@ -37,8 +37,10 @@ describe("Locations", () => {
   };
 
   const render = props => shallow(<Locations {...defaultProps} {...props} />);
+
   test("app renders with state objects", () => {
     const wrapper = render({ locations: [{ ...defaultProps }] });
+
     expect(wrapper).toMatchSnapshot();
   });
 });

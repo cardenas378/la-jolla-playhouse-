@@ -28,10 +28,10 @@ class Locations extends React.Component {
               contact_first_name={location.contact_first_name}
               contact_last_name={location.contact_last_name}
               contact_phone_number={location.contact_phone_number}
+              id="location"
               key={location.id}
               location_type={location.location_type}
               name={location.name}
-              id="location"
             />
           );
         })}
