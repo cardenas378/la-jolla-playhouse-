@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Locations app renders with state objects 1`] = `
+<Fragment>
+  <Header
+    id="header"
+    name="Locations"
+  >
+    <AddLocationLink />
+  </Header>
+  <Location
+    contact_email={null}
+    contact_first_name={null}
+    contact_last_name={null}
+    contact_phone_number={null}
+    id="location"
+    key="1"
+    location_type={null}
+    name="LEARN"
+  />
+</Fragment>
+`;
