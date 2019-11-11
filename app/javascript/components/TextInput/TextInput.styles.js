@@ -5,7 +5,6 @@ const StyledInput = styled.input`
   right: 0%;
   top: 31.25%;
   bottom: 0%;
-  */background: #ffffff;
   border: 1px solid ${props => props.theme.zircon};
   box-sizing: border-box;
   width: 500px;
