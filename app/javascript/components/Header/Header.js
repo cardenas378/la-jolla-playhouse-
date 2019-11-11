@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import { StyledHeader, StyledHeaderButton } from "./Header.styles";
@@ -10,5 +11,11 @@ const Header = ({ name, children, className }) => (
     </>
   </StyledHeader>
 );
+
+Header.propTypes = {
+  children: PropTypes.element,
+  className: PropTypes.string,
+  name: PropTypes.string
+};
 
 export { Header };

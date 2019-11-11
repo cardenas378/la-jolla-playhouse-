@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -26,13 +27,6 @@ class App extends React.Component {
       success: false
     };
   }
-
-  // getLocations() {
-  //   .then(locations => {
-  //     this.setState({locations})
-  // //     return response.json()
-  //   })
-  // }
 
   componentDidMount() {
     getLocations().then(locations => {
@@ -107,4 +101,7 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {};
+
 export { App };

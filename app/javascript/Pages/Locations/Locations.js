@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 
@@ -39,4 +40,18 @@ class Locations extends React.Component {
     );
   }
 }
+
+Locations.propTypes = {
+  changeSuccess: PropTypes.func,
+  conctact_email: PropTypes.string,
+  contact_first_name: PropTypes.string,
+  contact_last_name: PropTypes.string,
+  contact_phone_number: PropTypes.string,
+  id: PropTypes.number,
+  location_type: PropTypes.string,
+  locations: PropTypes.array,
+  name: PropTypes.string,
+  success: PropTypes.bool
+};
+
 export { Locations };

@@ -1,4 +1,5 @@
 import { textInputs } from "polished";
+import PropTypes from "prop-types";
 import React from "react";
 import { Redirect } from "react-router-dom";
 
@@ -84,7 +85,6 @@ class AddLocation extends React.Component {
     } = this.state.form;
     const { success } = this.props;
 
-    // console.log(this.state.form);
     return (
       <>
         <Header className="with-overlap" name="Add a Location" />
@@ -337,4 +337,10 @@ class AddLocation extends React.Component {
     );
   }
 }
+
+AddLocation.propTypes = {
+  handleNewLocation: PropTypes.func,
+  success: PropTypes.bool
+};
+
 export { AddLocation };

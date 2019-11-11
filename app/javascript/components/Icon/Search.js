@@ -13,4 +13,10 @@ const Search = ({ className, height, width }) => (
   </svg>
 );
 
+Search.propTypes = {
+  className: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string
+};
+
 export { Search };
