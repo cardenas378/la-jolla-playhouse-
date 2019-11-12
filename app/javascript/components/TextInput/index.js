@@ -1,3 +1,9 @@
-import { FullInput, StyledSelect, HalfInput, ThirdInput } from "./TextInput";
+import {
+  FullInput,
+  StyledSelect,
+  HalfInput,
+  ThirdInput,
+  PerformanceDateInput
+} from "./TextInput";
 
-export { HalfInput, FullInput, StyledSelect, ThirdInput };
+export { HalfInput, FullInput, StyledSelect, ThirdInput, PerformanceDateInput };

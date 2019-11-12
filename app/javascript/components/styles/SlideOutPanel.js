@@ -25,4 +25,13 @@ const BookingSlideOutPanel = styled.div`
   min-height: calc(100vh - 175px);
 `;
 
-export { StyledSlideOutPanel, BookingSlideOutPanel };
+const DayPerformanceSlideOutPanel = styled.div`
+  box-sizing: border-box;
+  border-radius: 30px 0px 0px 0px;
+  padding: 30px ${props => props.theme.contentPaddingLeft};
+  position: relative;
+  margin-left: 60px;
+  margin-top: -65px;
+`; 
+
+export { StyledSlideOutPanel, BookingSlideOutPanel, DayPerformanceSlideOutPanel };

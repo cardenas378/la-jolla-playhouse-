@@ -10,10 +10,20 @@ import {
 import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
 import { StyledFormLayout } from "../styles/Forms";
-import { BookingSlideOutPanel } from "../styles/SlideOutPanel";
+import {
+  BookingSlideOutPanel,
+  DayPerformanceSlideOutPanel
+} from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
+import { PerformanceDateInput } from "../TextInput";
 
-import { AddBookingHeader, SaveBookingButton, BookingInput } from "..";
+import {
+  AddBookingHeader,
+  SaveBookingButton,
+  BookingInput,
+  DayPerformanceHeader
+} from "..";
+import { PerformanceDateCalendar } from "../PerformanceDateCalendar/PerformanceDateCalendar";
 
 class AddBooking extends React.Component {
   constructor(props) {
@@ -60,7 +70,6 @@ class AddBooking extends React.Component {
       reference
     } = this.state;
 
-    console.log(this.state.form);
     return (
       <>
         <AddBookingHeader
@@ -127,19 +136,41 @@ class AddBooking extends React.Component {
                   value={contact_relationship}
                 />
               </div>
-              <div className="full align-right">
-                <SaveBookingButton
-                  id="button"
-                  onClick={this.handleClick}
-                  type="button"
-                >
-                  SAVE BOOKING
-                </SaveBookingButton>
-              </div>
-              {success && <Redirect to="/" />}
+              <br />
             </StyledFormLayout>
           </form>
         </BookingSlideOutPanel>
+
+        <DayPerformanceSlideOutPanel>
+          <StyledFormLayout>
+            <div className="half">
+              <DayPerformanceHeader name="PERFORMANCES" />
+              <StyledLabel>Day of Performance(s)</StyledLabel>
+              <div>
+                <PerformanceDateInput
+                  id="performance_date"
+                  name="performance_date"
+                  onChange={this.handleChange}
+                  placeholder="mm/dd/yyy"
+                  type="text"
+                  value={contact_last_name}
+                />
+                <PerformanceDateCalendar />
+              </div>
+            </div>
+
+            <div className="full align-right">
+              <SaveBookingButton
+                id="button"
+                onClick={this.handleClick}
+                type="button"
+              >
+                SAVE BOOKING
+              </SaveBookingButton>
+            </div>
+            {success && <Redirect to="/" />}
+          </StyledFormLayout>
+        </DayPerformanceSlideOutPanel>
       </>
     );
   }
