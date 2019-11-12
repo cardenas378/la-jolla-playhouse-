@@ -51,9 +51,6 @@ class App extends React.Component {
   handleNewLocation = location => {
     createLocation(location).then(location => {
       this.setState({ success: true });
-      getLocations().then(locations => {
-        this.setState({ locations });
-      });
     });
   };
 
