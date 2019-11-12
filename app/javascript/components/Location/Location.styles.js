@@ -7,8 +7,13 @@ const StyledLocationCard = styled.div`
   box-sizing: border-box;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 20px 0 20px 25px;
   margin: 30px 65px 25px 35px;
+  display: grid;
+  grid-template-columns: auto 225px;
+  .body {
+    grid-column: span auto;
+    padding: 20px 0 20px 25px;
+  }
   &.school {
     border-left: 20px solid ${props => props.theme.lightSteelBlue};
   }
@@ -28,6 +33,11 @@ const StyledLocationCard = styled.div`
     line-height: 4.4rem;
     margin: 0 0 20px;
     min-height: 4.4rem;
+  }
+  .links {
+    flex-direction: row;
+    grid-column: span 200px;
+    position: relative;
   }
 `;
 

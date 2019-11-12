@@ -7,7 +7,7 @@ import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header } from "./Header";
 import { Icon } from "./Icon";
-import { AddLocationLink } from "./Links";
+import { AddLocationLink, AddBookingLink } from "./Links";
 import { Location } from "./Location";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
@@ -25,6 +25,7 @@ export {
   AddBooking,
   SubmitButton,
   AddLocationLink,
+  AddBookingLink,
   SaveBookingButton,
   Home,
   StyledSelect,

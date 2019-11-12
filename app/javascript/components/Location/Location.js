@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { AddBookingLink } from "../index";
 import {
   StyledCardLabel,
   StyledCardTitle,
@@ -16,14 +17,20 @@ const Location = props => (
   <StyledLocationCard
     className={props.location_type && props.location_type.toLowerCase()}
   >
-    <StyledCardLabel>{props.location_type}</StyledCardLabel>
-    <StyledCardTitle>{props.name}</StyledCardTitle>
-    <LocationContact
-      contact_email={props.contact_email}
-      contact_phone_number={props.contact_phone_number}
-      first_name={props.contact_first_name}
-      last_name={props.contact_last_name}
-    />
+    <div className="body">
+      <StyledCardLabel>{props.location_type}</StyledCardLabel>
+      <StyledCardTitle>{props.name}</StyledCardTitle>
+      <LocationContact
+        contact_email={props.contact_email}
+        contact_phone_number={props.contact_phone_number}
+        first_name={props.contact_first_name}
+        last_name={props.contact_last_name}
+      />
+    </div>
+    <div className="links">
+      <AddBookingLink />
+      <AddBookingLink />
+    </div>
   </StyledLocationCard>
 );
 
