@@ -5,8 +5,8 @@ import { Icon } from "../../Icon";
 
 import { StyledAddBookingLink } from "./AddBookingLink.styles";
 
-const AddBookingLink = () => (
-  <StyledAddBookingLink to="/AddBooking">
+const AddBookingLink = (props) => (
+  <StyledAddBookingLink to={`/AddBooking/${props.locationID}`}>
     <Icon name="plus" />
     <span>ADD A BOOKING</span>
   </StyledAddBookingLink>

@@ -17,6 +17,14 @@ const createLocation = function(attributes) {
   });
 };
 
+let findLocation = function(id) {
+    return fetch(`/locations/${id}`)
+    .then((resp) => {
+        let json = resp.json()
+        return json
+    })
+}
+
 const viewLocation = function(id) {
   return fetch(`/locations/${id}`, {
     method: "GET",
@@ -32,4 +40,4 @@ const viewLocation = function(id) {
   });
 };
 
-export { viewLocation, getLocations, createLocation };
+export { viewLocation, getLocations, createLocation, findLocation };

@@ -8,9 +8,9 @@ import {
   LocationIdHeader
 } from "./AddBookingHeader.styles";
 
-const AddBookingHeader = ({ name, location_name }) => (
+const AddBookingHeader = ({ location_name }) => (
   <AddBookingStyledHeader>
-    <h1>{name}</h1>
+    <h1>ADD A BOOKING</h1>
     <hr />
     <LocationIdHeader>
       {location_name}
@@ -24,6 +24,5 @@ const AddBookingHeader = ({ name, location_name }) => (
 
 AddBookingHeader.propTypes = {
   location_name: PropTypes.string,
-  name: PropTypes.string
 };
 export { AddBookingHeader };

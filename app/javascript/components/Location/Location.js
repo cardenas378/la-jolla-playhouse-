@@ -28,7 +28,10 @@ const Location = props => (
       />
     </div>
     <div className="links">
-      <AddBookingLink />
+      <AddBookingLink
+        {...props}
+        locationID={props.locationID}
+      />
       <AddBookingLink />
     </div>
   </StyledLocationCard>

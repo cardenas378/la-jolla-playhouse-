@@ -113,7 +113,7 @@ class App extends React.Component {
               />
               <Route
                 exact
-                path="/AddBooking"
+                path="/AddBooking/:location_id"
                 render={props => {
                   return (
                     <AddBooking

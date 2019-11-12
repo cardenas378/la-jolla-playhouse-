@@ -10,6 +10,7 @@ import {
 
 import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
+import { findLocation } from "../api";
 import { StyledFormLayout } from "../styles/Forms";
 import { BookingSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
@@ -27,13 +28,22 @@ class AddBooking extends React.Component {
         contact_email: "",
         contact_relationship: "",
         reference: ""
-      }
+      },
+      locationID: props.match.params,
+      location: null
     };
   }
 
-  static defaultProps = {
-    location_name: "JSC Innovation Lab"
-  };
+  // componentDidMount(){
+  //   findLocation(this.state.locationID)
+  //   .then((foundLocation) => {
+  //     this.setState({location: foundLocation})
+  //   })
+  // }
+
+  // static defaultProps = {
+  //   location_name: "JSC Innovation Lab"
+  // };
 
   handleChange = e => {
     const { form } = this.state;
@@ -51,7 +61,7 @@ class AddBooking extends React.Component {
 
   render() {
     const { success } = this.props;
-
+    console.log(this.state.locationID);
     const {
       contact_first_name,
       contact_last_name,
@@ -64,8 +74,7 @@ class AddBooking extends React.Component {
     return (
       <>
         <AddBookingHeader
-          location_name={this.props.location_name}
-          name="Add a Booking"
+          location_name={this.state.location_name}
         />
 
         <BookingSlideOutPanel>
