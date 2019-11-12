@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const BookingInput = styled.input`
   left: ${props => props.theme.contentPaddingLeft};
   right: 0%;
