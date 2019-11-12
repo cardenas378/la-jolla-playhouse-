@@ -7,6 +7,8 @@ import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header } from "./Header";
 import { Icon } from "./Icon";
+import { AddLocationLink } from "./Links";
+import { Location } from "./Location";
 import { Logo } from "./Logo";
 import { RadioButton } from "./RadioButton";
 import {
@@ -22,6 +24,7 @@ export {
   AddLocation,
   AddBooking,
   SubmitButton,
+  AddLocationLink,
   SaveBookingButton,
   Home,
   StyledSelect,
@@ -34,6 +37,7 @@ export {
   RadioButton,
   FullInput,
   HalfInput,
+  ThirdInput,
   BookingInput,
-  ThirdInput
+  Location
 };

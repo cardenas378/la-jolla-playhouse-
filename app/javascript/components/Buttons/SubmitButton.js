@@ -1,11 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { StyledButton } from "./SubmitButton.styles";
+import { StyledSubmitButton } from "./SubmitButton.styles";
 
 const SubmitButton = ({ onClick }) => (
-  <StyledButton onClick={onClick}>
+  <StyledSubmitButton onClick={onClick}>
     <span>SUBMIT</span>
-  </StyledButton>
+  </StyledSubmitButton>
 );
+
+SubmitButton.propTypes = {
+  onClick: PropTypes.func
+};
 
 export { SubmitButton };

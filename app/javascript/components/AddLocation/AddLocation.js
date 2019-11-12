@@ -1,4 +1,5 @@
 import { textInputs } from "polished";
+import PropTypes from "prop-types";
 import React from "react";
 import { Redirect } from "react-router-dom";
 
@@ -86,7 +87,7 @@ class AddLocation extends React.Component {
 
     return (
       <>
-        <Header name="Add a Location" />
+        <Header className="with-overlap" name="Add a Location" />
 
         <StyledSlideOutPanel>
           <form>
@@ -110,15 +111,15 @@ class AddLocation extends React.Component {
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="school"
+                    value="School"
                   />
                   <RadioButton
-                    id="non-school"
-                    label="Non-School"
+                    id="non-profit"
+                    label="Non-Profit"
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="non-school"
+                    value="Non-Profit"
                   />
                   <RadioButton
                     id="corporate"
@@ -126,7 +127,7 @@ class AddLocation extends React.Component {
                     name="location_type"
                     onChange={this.handleChange}
                     type="radio"
-                    value="corporate"
+                    value="Corporate"
                   />
                 </div>
               </div>
@@ -142,7 +143,7 @@ class AddLocation extends React.Component {
                 />
               </div>
 
-              {location_type == "school" ? (
+              {location_type == "School" ? (
                 <>
                   <div className="third">
                     <StyledLabel>Principal Name</StyledLabel>
@@ -336,4 +337,10 @@ class AddLocation extends React.Component {
     );
   }
 }
+
+AddLocation.propTypes = {
+  handleNewLocation: PropTypes.func,
+  success: PropTypes.bool
+};
+
 export { AddLocation };

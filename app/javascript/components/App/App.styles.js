@@ -8,6 +8,7 @@ const StyledLayout = styled.div`
   main {
     grid-area: main;
     background: ${props => props.theme.whiteSmoke};
+    min-height: 100vh;
   }
 `;
 

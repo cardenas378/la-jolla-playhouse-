@@ -9,7 +9,7 @@ const StyledSlideOutPanel = styled.div`
   padding: 30px ${props => props.theme.contentPaddingLeft};
   position: relative;
   margin-left: 60px;
-  margin-top: -50px;
+  margin-top: -70px;
 `;
 
 const BookingSlideOutPanel = styled.div`

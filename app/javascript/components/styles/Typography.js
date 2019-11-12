@@ -11,4 +11,48 @@ const StyledLabel = styled.label`
   margin-bottom: 3px;
 `;
 
-export { StyledLabel };
+const StyledCardLabel = styled.h5`
+  font-family: ${props => props.theme.sansSerif};
+  line-height: 135%;
+  font-size: 1.4rem;
+  font-weight: ${props => props.theme.weightBold};
+`;
+
+const StyledCardTitle = styled.h2`
+  font-family: ${props => props.theme.sansSerif};
+  line-height: 140%;
+  font-size: 3.2rem;
+  font-weight: ${props => props.theme.weightBold};
+`;
+
+const StyledTertiaryHeading = styled.h3`
+  font-family: ${props => props.theme.georgia};
+  line-height: 100%;
+  font-size: 1.4rem;
+  font-weight: ${props => props.theme.weightRegular};
+  letter-spacing: 0.09rem;
+  text-transform: uppercase;
+`;
+
+const StyledCardMeta = styled.h4`
+  font-family: ${props => props.theme.sansSerif};
+  line-height: 100%;
+  font-size: 2.4rem;
+  font-weight: ${props => props.theme.weightRegular};
+`;
+
+const StyledBodyCopy = styled.p`
+  font-family: ${props => props.theme.georgia};
+  line-height: 160%;
+  font-size: 1.8rem;
+  font-weight: ${props => props.theme.weightRegular};
+`;
+
+export {
+  StyledLabel,
+  StyledCardLabel,
+  StyledCardTitle,
+  StyledTertiaryHeading,
+  StyledCardMeta,
+  StyledBodyCopy
+};

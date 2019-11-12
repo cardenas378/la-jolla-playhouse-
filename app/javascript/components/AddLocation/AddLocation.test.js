@@ -25,7 +25,7 @@ test("AddLocation tests all fields of input", () => {
 
   expect(app.find("#name").exists()).toEqual(true);
   expect(app.find("#school").exists()).toEqual(true);
-  expect(app.find("#non-school").exists()).toEqual(true);
+  expect(app.find("#non-profit").exists()).toEqual(true);
   expect(app.find("#corporate").exists()).toEqual(true);
   expect(app.find("#contact_first_name").exists()).toEqual(true);
   expect(app.find("#contact_last_name").exists()).toEqual(true);
@@ -46,7 +46,7 @@ test("If Type is a school", () => {
   const school = shallow(<AddLocation />);
 
   school.find("#school").simulate("change", {
-    target: { name: "location_type", value: "school" }
+    target: { name: "location_type", value: "School" }
   });
 
   expect(school.find("#school_principal").exists()).toEqual(true);
@@ -54,11 +54,22 @@ test("If Type is a school", () => {
   expect(school.find("#school_district").exists()).toEqual(true);
 });
 
-test("If Type is not a school", () => {
+test("If Type is a non-profit", () => {
   const other = shallow(<AddLocation />);
 
-  other.find("#non-school").simulate("change", {
-    target: { name: "location_type", value: "non-school" }
+  other.find("#corporate").simulate("change", {
+    target: { name: "location_type", value: "Corporate" }
+  });
+
+  expect(other.find("#county_district").exists()).toEqual(true);
+  expect(other.find("#city_district").exists()).toEqual(true);
+});
+
+test("If Type is a corporate", () => {
+  const other = shallow(<AddLocation />);
+
+  other.find("#non-profit").simulate("change", {
+    target: { name: "location_type", value: "Non-Profit" }
   });
 
   expect(other.find("#county_district").exists()).toEqual(true);

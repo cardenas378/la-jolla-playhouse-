@@ -20,6 +20,10 @@ const BookingSectionHeader = ({ name }) => (
   </>
 );
 
+FormSectionHeader.propTypes = {
+  name: PropTypes.string
+};
+
 BookingSectionHeader.propTypes = {
   name: PropTypes.string
 };

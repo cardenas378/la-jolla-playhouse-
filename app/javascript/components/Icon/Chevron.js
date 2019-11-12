@@ -17,4 +17,10 @@ const Chevron = ({ className, height, width }) => (
   </svg>
 );
 
+Chevron.propTypes = {
+  className: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string
+};
+
 export { Chevron };
