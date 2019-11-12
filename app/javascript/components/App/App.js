@@ -111,6 +111,20 @@ class App extends React.Component {
                   return <Home {...props} />;
                 }}
               />
+              <Route
+                exact
+                path="/AddBooking"
+                render={props => {
+                  return (
+                    <AddBooking
+                      {...props}
+                      changeSuccess={this.changeSuccess}
+                      locations={this.state.locations}
+                      success={this.state.success}
+                    />
+                  );
+                }}
+              />
             </main>
           </Router>
         </StyledLayout>
