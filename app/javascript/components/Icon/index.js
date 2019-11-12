@@ -6,6 +6,7 @@ import { Email } from "./Email";
 import { Phone } from "./Phone";
 import { Plus } from "./Plus";
 import { Search } from "./Search";
+import { Vector } from "./Vector";
 
 /* eslint complexity: ["error", { "max": 7 }]*/
 
@@ -21,6 +22,10 @@ const Icon = props => {
       return <Plus {...props} />;
     case "search":
       return <Search {...props} />;
+
+    case "vector":
+      return <Vector {...props} />;
+
     default:
       return <div />;
   }

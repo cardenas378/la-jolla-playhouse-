@@ -1,3 +1,4 @@
+import { SaveBookingButton } from "./SaveBookingButton";
 import { SubmitButton } from "./SubmitButton";
 
-export { SubmitButton };
+export { SubmitButton, SaveBookingButton };
