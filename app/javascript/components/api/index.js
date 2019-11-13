@@ -17,12 +17,11 @@ const createLocation = function(attributes) {
   });
 };
 
-let findLocation = function(id) {
-    return fetch(`/locations/${id}`)
-    .then((resp) => {
-        return resp.json()
-    })
-}
+const findLocation = function(id) {
+  return fetch(`/locations/${id}`).then(resp => {
+    return resp.json();
+  });
+};
 
 const viewLocation = function(id) {
   return fetch(`/locations/${id}`, {

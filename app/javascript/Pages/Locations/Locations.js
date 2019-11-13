@@ -32,8 +32,8 @@ class Locations extends React.Component {
               id="location"
               key={location.id}
               location_type={location.location_type}
-              name={location.name}
               locationID={location.id}
+              name={location.name}
             />
           );
         })}

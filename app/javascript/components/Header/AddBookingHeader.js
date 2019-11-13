@@ -23,6 +23,6 @@ const AddBookingHeader = ({ location_name }) => (
 );
 
 AddBookingHeader.propTypes = {
-  location_name: PropTypes.string,
+  location_name: PropTypes.string
 };
 export { AddBookingHeader };

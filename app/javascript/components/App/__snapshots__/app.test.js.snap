@@ -63,7 +63,7 @@ exports[`App renders the component correctly 1`] = `
         />
         <Route
           exact={true}
-          path="/AddBooking"
+          path="/AddBooking/:location_id"
           render={[Function]}
         />
       </main>

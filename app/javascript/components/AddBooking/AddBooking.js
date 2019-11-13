@@ -8,9 +8,9 @@ import {
   Link
 } from "react-router-dom";
 
+import { findLocation } from "../api";
 import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
-import { findLocation } from "../api";
 import { StyledFormLayout } from "../styles/Forms";
 import { BookingSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
@@ -34,11 +34,10 @@ class AddBooking extends React.Component {
     };
   }
 
-  componentDidMount(){
-    findLocation(this.state.locationID)
-    .then((foundLocation) => {
-      this.setState({location: foundLocation, form: foundLocation})
-    })
+  componentDidMount() {
+    findLocation(this.state.locationID).then(foundLocation => {
+      this.setState({ location: foundLocation, form: foundLocation });
+    });
   }
 
   handleChange = e => {
@@ -68,9 +67,7 @@ class AddBooking extends React.Component {
 
     return (
       <>
-        <AddBookingHeader
-          location_name={this.state.location.name}
-        />
+        <AddBookingHeader location_name={this.state.location.name} />
 
         <BookingSlideOutPanel>
           <BookingSectionHeader name="BOOKING CONTACT" />
