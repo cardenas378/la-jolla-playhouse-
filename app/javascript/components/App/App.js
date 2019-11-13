@@ -37,8 +37,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: [],
-      success: false
+      locations: []
     };
   }
 
@@ -49,23 +48,11 @@ class App extends React.Component {
   }
 
   handleNewLocation = location => {
-    createLocation(location).then(location => {
-      this.setState({ success: true });
-    });
+    createLocation(location);
   };
-
-  changeSuccess = value => {
-    this.setState({ success: value });
-  };
-
-  componentDidMount() {
-    getLocations().then(locations => {
-      this.setState({ locations });
-    });
-  }
 
   render() {
-    const { locations, success } = this.state;
+    const { locations } = this.state;
 
     return (
       <ThemeProvider theme={Theme}>
@@ -83,7 +70,6 @@ class App extends React.Component {
                     <AddLocation
                       {...props}
                       handleNewLocation={this.handleNewLocation}
-                      success={success}
                     />
                   );
                 }}
@@ -93,14 +79,7 @@ class App extends React.Component {
                 exact
                 path="/Locations"
                 render={props => {
-                  return (
-                    <Locations
-                      {...props}
-                      changeSuccess={this.changeSuccess}
-                      locations={locations}
-                      success={success}
-                    />
-                  );
+                  return <Locations {...props} locations={locations} />;
                 }}
               />
 
@@ -116,12 +95,7 @@ class App extends React.Component {
                 path="/AddBooking/:location_id"
                 render={props => {
                   return (
-                    <AddBooking
-                      {...props}
-                      changeSuccess={this.changeSuccess}
-                      locations={this.state.locations}
-                      success={this.state.success}
-                    />
+                    <AddBooking {...props} locations={this.state.locations} />
                   );
                 }}
               />

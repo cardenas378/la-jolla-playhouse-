@@ -23,19 +23,4 @@ const findLocation = function(id) {
   });
 };
 
-const viewLocation = function(id) {
-  return fetch(`/locations/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(resp => {
-    if (resp.status === 200) {
-      const json = resp.json();
-
-      return json;
-    }
-  });
-};
-
-export { viewLocation, getLocations, createLocation, findLocation };
+export { getLocations, createLocation, findLocation };

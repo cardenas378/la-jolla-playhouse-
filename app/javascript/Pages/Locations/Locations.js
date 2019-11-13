@@ -7,13 +7,6 @@ import { Header, AddLocation, AddLocationLink } from "../../components/index";
 import { Location } from "../../components/Location";
 
 class Locations extends React.Component {
-  handleSuccess() {
-    this.props.changeSuccess(false);
-  }
-
-  // componentDidMount() {
-  //   this.props.changeSuccess(false)
-  // }
   render() {
     const { locations } = this.props;
 
@@ -51,8 +44,7 @@ Locations.propTypes = {
   id: PropTypes.number,
   location_type: PropTypes.string,
   locations: PropTypes.array,
-  name: PropTypes.string,
-  success: PropTypes.bool
+  name: PropTypes.string
 };
 
 export { Locations };

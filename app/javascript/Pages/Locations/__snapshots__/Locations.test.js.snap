@@ -15,6 +15,7 @@ exports[`Locations app renders with state objects 1`] = `
     contact_phone_number={null}
     id="location"
     key="1"
+    locationID={1}
     location_type={null}
     name="LEARN"
   />

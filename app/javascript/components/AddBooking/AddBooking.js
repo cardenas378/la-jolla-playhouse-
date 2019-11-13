@@ -55,7 +55,6 @@ class AddBooking extends React.Component {
   };
 
   render() {
-    const { success } = this.props;
     const {
       contact_first_name,
       contact_last_name,
@@ -137,7 +136,6 @@ class AddBooking extends React.Component {
                   SAVE BOOKING
                 </SaveBookingButton>
               </div>
-              {success && <Redirect to="/" />}
             </StyledFormLayout>
           </form>
         </BookingSlideOutPanel>
@@ -147,7 +145,6 @@ class AddBooking extends React.Component {
 }
 
 AddBooking.propTypes = {
-  handleNewBooking: PropTypes.func,
-  success: PropTypes.bool
+  handleNewBooking: PropTypes.func
 };
 export { AddBooking };

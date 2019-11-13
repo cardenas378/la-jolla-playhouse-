@@ -83,7 +83,6 @@ class AddLocation extends React.Component {
       county_district,
       city_district
     } = this.state.form;
-    const { success } = this.props;
 
     return (
       <>
@@ -339,8 +338,7 @@ class AddLocation extends React.Component {
 }
 
 AddLocation.propTypes = {
-  handleNewLocation: PropTypes.func,
-  success: PropTypes.bool
+  handleNewLocation: PropTypes.func
 };
 
 export { AddLocation };

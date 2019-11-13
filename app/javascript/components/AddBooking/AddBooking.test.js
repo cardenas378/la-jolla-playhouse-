@@ -5,10 +5,12 @@ import ReactDOM from "react-dom";
 
 import { AddBooking } from "components/AddBooking";
 
+jest.mock("../api");
+
 Enzyme.configure({ adapter: new Adapter() });
 
 test("AddBooking form renders without an error", () => {
-  const app = shallow(<AddBooking />);
+  const app = shallow(<AddBooking match={{ params: { location_id: 1 } }} />);
 
   expect(app.find("form").exists()).toBe(true);
 });
@@ -16,12 +18,11 @@ test("AddBooking form renders without an error", () => {
 test("AddBooking renders without crashing", () => {
   const div = document.createElement("div");
 
-  ReactDOM.render(<AddBooking />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  ReactDOM.render(<AddBooking match={{ params: { location_id: 1 } }} />, div);
 });
 
 test("AddBooking tests all fields of input", () => {
-  const app = shallow(<AddBooking />);
+  const app = shallow(<AddBooking match={{ params: { location_id: 1 } }} />);
 
   expect(app.find("#contact_first_name").exists()).toEqual(true);
   expect(app.find("#contact_last_name").exists()).toEqual(true);
@@ -35,7 +36,12 @@ describe("Test handlechange component", () => {
   it("Test click event", () => {
     const mockCallBack = jest.fn();
 
-    const app = shallow(<AddBooking handleNewBooking={mockCallBack} />);
+    const app = shallow(
+      <AddBooking
+        handleNewBooking={mockCallBack}
+        match={{ params: { location_id: 1 } }}
+      />
+    );
     const newName = "drew";
 
     app.find("#contact_first_name").simulate("change", {

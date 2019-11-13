@@ -3,7 +3,13 @@ export function getLocations(loc) {
     process.nextTick(() => resolve({}));
   });
 }
-export function createLocations(loc) {
+export function createLocation(loc) {
+  return new Promise((resolve, reject) => {
+    process.nextTick(() => resolve({}));
+  });
+}
+
+export function findLocation(loc) {
   return new Promise((resolve, reject) => {
     process.nextTick(() => resolve({}));
   });
