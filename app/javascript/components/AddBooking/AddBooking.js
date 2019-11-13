@@ -36,28 +36,25 @@ class AddBooking extends React.Component {
         contact_email: "",
         contact_relationship: "",
         reference: "",
-        startDate: new Date()
+        performance_date: ""
       }
     };
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   static defaultProps = {
     location_id: "JSC Innovation Lab"
   };
 
-  handleChange = (e, date) => {
+  handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
-    form[(name, date)] = value;
-
+    form[name] = value;
     this.setState({ form });
-    this.setState({
-      startDate: date
-    });
   };
+
   handleClick = () => {
     const { form } = this.state;
-
     this.props.handleNewBooking(form);
   };
 
@@ -71,10 +68,10 @@ class AddBooking extends React.Component {
       contact_email,
       contact_relationship,
       reference,
-      date
+      performance_date
     } = this.state.form;
 
-    console.log({ date });
+    console.log(this.state.form.performance_date);
 
     return (
       <>
@@ -158,7 +155,7 @@ class AddBooking extends React.Component {
                   name="performance_date"
                   onChange={this.handleChange}
                   type="date"
-                  value={date}
+                  value={performance_date}
                 />
               </div>
             </div>
