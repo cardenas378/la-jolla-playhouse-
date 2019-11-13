@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :performances
   resources :locations
   resources :bookings
   get '*path', to: 'pages#index', constraints: ->(request){ request.format.html? }
