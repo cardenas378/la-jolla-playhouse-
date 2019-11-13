@@ -32,6 +32,10 @@ const DayPerformanceSlideOutPanel = styled.div`
   position: relative;
   margin-left: 60px;
   margin-top: -65px;
-`; 
+`;
 
-export { StyledSlideOutPanel, BookingSlideOutPanel, DayPerformanceSlideOutPanel };
+export {
+  StyledSlideOutPanel,
+  BookingSlideOutPanel,
+  DayPerformanceSlideOutPanel
+};

@@ -9,6 +9,7 @@ import {
 
 import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
+import { PerformanceDateCalendar } from "../PerformanceDateCalendar/PerformanceDateCalendar";
 import { StyledFormLayout } from "../styles/Forms";
 import {
   BookingSlideOutPanel,
@@ -23,7 +24,6 @@ import {
   BookingInput,
   DayPerformanceHeader
 } from "..";
-import { PerformanceDateCalendar } from "../PerformanceDateCalendar/PerformanceDateCalendar";
 
 class AddBooking extends React.Component {
   constructor(props) {
@@ -35,7 +35,8 @@ class AddBooking extends React.Component {
         contact_phone_number: "",
         contact_email: "",
         contact_relationship: "",
-        reference: ""
+        reference: "",
+        startDate: new Date()
       }
     };
   }
@@ -44,14 +45,16 @@ class AddBooking extends React.Component {
     location_id: "JSC Innovation Lab"
   };
 
-  handleChange = e => {
+  handleChange = (e, date) => {
     const { form } = this.state;
     const { name, value } = e.target;
+    form[(name, date)] = value;
 
-    form[name] = value;
     this.setState({ form });
+    this.setState({
+      startDate: date
+    });
   };
-
   handleClick = () => {
     const { form } = this.state;
 
@@ -67,8 +70,11 @@ class AddBooking extends React.Component {
       contact_phone_number,
       contact_email,
       contact_relationship,
-      reference
-    } = this.state;
+      reference,
+      date
+    } = this.state.form;
+
+    console.log({ date });
 
     return (
       <>
@@ -151,11 +157,9 @@ class AddBooking extends React.Component {
                   id="performance_date"
                   name="performance_date"
                   onChange={this.handleChange}
-                  placeholder="mm/dd/yyy"
-                  type="text"
-                  value={contact_last_name}
+                  type="date"
+                  value={date}
                 />
-                <PerformanceDateCalendar />
               </div>
             </div>
 

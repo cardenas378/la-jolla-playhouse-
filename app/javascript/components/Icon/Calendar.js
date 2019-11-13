@@ -4,9 +4,9 @@ import React from "react";
 const Calendar = ({ className, height, width }) => (
   <svg
     className={className}
-    width={width}
     height={height}
     viewBox="0 0 32 32"
+    width={width}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M4.72119 20.4099H27.2786V21.9836H4.72119V20.4099Z" />

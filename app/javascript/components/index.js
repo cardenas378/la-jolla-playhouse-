@@ -6,8 +6,8 @@ import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header, DayPerformanceHeader } from "./Header";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
-import { RadioButton } from "./RadioButton";
 import { PerformanceDateCalendar } from "./PerformanceDateCalendar";
+import { RadioButton } from "./RadioButton";
 import {
   FullInput,
   StyledSelect,
