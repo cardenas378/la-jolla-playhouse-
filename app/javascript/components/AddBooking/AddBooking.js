@@ -49,12 +49,14 @@ class AddBooking extends React.Component {
   handleChange = e => {
     const { form } = this.state;
     const { name, value } = e.target;
+
     form[name] = value;
     this.setState({ form });
   };
 
   handleClick = () => {
     const { form } = this.state;
+
     this.props.handleNewBooking(form);
   };
 
@@ -158,6 +160,7 @@ class AddBooking extends React.Component {
                   value={performance_date}
                 />
               </div>
+              <PerformanceDateCalendar />
             </div>
 
             <div className="full align-right">
