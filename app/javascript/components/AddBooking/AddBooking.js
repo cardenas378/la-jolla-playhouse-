@@ -29,21 +29,17 @@ class AddBooking extends React.Component {
         contact_relationship: "",
         reference: ""
       },
-      locationID: props.match.params,
-      location: null
+      locationID: this.props.match.params.location_id,
+      location: ""
     };
   }
 
-  // componentDidMount(){
-  //   findLocation(this.state.locationID)
-  //   .then((foundLocation) => {
-  //     this.setState({location: foundLocation})
-  //   })
-  // }
-
-  // static defaultProps = {
-  //   location_name: "JSC Innovation Lab"
-  // };
+  componentDidMount(){
+    findLocation(this.state.locationID)
+    .then((foundLocation) => {
+      this.setState({location: foundLocation, form: foundLocation})
+    })
+  }
 
   handleChange = e => {
     const { form } = this.state;
@@ -61,7 +57,6 @@ class AddBooking extends React.Component {
 
   render() {
     const { success } = this.props;
-    console.log(this.state.locationID);
     const {
       contact_first_name,
       contact_last_name,
@@ -74,7 +69,7 @@ class AddBooking extends React.Component {
     return (
       <>
         <AddBookingHeader
-          location_name={this.state.location_name}
+          location_name={this.state.location.name}
         />
 
         <BookingSlideOutPanel>

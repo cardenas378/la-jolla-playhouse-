@@ -32,7 +32,10 @@ const Location = props => (
         {...props}
         locationID={props.locationID}
       />
-      <AddBookingLink />
+      <AddBookingLink
+        {...props}
+        locationID={props.locationID}
+      />
     </div>
   </StyledLocationCard>
 );

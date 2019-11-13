@@ -20,8 +20,7 @@ const createLocation = function(attributes) {
 let findLocation = function(id) {
     return fetch(`/locations/${id}`)
     .then((resp) => {
-        let json = resp.json()
-        return json
+        return resp.json()
     })
 }
 
