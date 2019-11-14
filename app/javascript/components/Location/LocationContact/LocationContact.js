@@ -5,10 +5,8 @@ import { Icon } from "../../Icon";
 import {
   StyledTertiaryHeading,
   StyledCardMeta,
-  StyledBodyCopy,
-  StyledCardLabel
+  StyledBodyCopy
 } from "../../styles/Typography";
-import { StyledLocationCard } from "../Location.styles";
 
 import { StyledLocationContact } from "./LocationContact.styles";
 

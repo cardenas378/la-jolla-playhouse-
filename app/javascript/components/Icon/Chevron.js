@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const Chevron = ({ className, height, width }) => (
+const Chevron = ({ height, width }) => (
   <svg
     height={height}
     viewBox="0 0 32 32"
@@ -18,7 +18,6 @@ const Chevron = ({ className, height, width }) => (
 );
 
 Chevron.propTypes = {
-  className: PropTypes.string,
   height: PropTypes.string,
   width: PropTypes.string
 };

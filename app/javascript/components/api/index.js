@@ -1,9 +1,3 @@
-const getLocations = function() {
-  return fetch("/locations").then(response => {
-    return response.json();
-  });
-};
-
 const createLocation = function(attributes) {
   return fetch("/locations", {
     method: "POST",
@@ -14,6 +8,12 @@ const createLocation = function(attributes) {
     body: JSON.stringify({ location: attributes })
   }).then(resp => {
     return resp.json();
+  });
+};
+
+const getLocations = function() {
+  return fetch("/locations").then(response => {
+    return response.json();
   });
 };
 
@@ -32,4 +32,4 @@ const viewLocation = function(id) {
   });
 };
 
-export { viewLocation, getLocations, createLocation };
+export { createLocation, getLocations, viewLocation };

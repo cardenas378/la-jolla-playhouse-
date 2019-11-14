@@ -1,11 +1,5 @@
-import PropTypes from "prop-types";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import styled, { ThemeProvider } from "styled-components/macro";
 
@@ -19,19 +13,6 @@ import GlobalStyle from "../styles/Global";
 import Theme from "../styles/Theme";
 
 import { StyledLayout } from "./App.styles";
-
-import {
-  Header,
-  AddBookingHeader,
-  FormSectionHeader,
-  StyledSelect,
-  FullInput,
-  RadioButton,
-  SubmitButton,
-  SaveBookingButton,
-  HalfInput,
-  ThirdInput
-} from "..";
 
 class App extends React.Component {
   constructor(props) {
@@ -60,12 +41,6 @@ class App extends React.Component {
   changeSuccess = value => {
     this.setState({ success: value });
   };
-
-  componentDidMount() {
-    getLocations().then(locations => {
-      this.setState({ locations });
-    });
-  }
 
   render() {
     const { locations, success } = this.state;
@@ -123,8 +98,7 @@ class App extends React.Component {
                     <AddBooking
                       {...props}
                       changeSuccess={this.changeSuccess}
-                      locations={this.state.locations}
-                      success={this.state.success}
+                      locations={locations}
                     />
                   );
                 }}
@@ -136,7 +110,5 @@ class App extends React.Component {
     );
   }
 }
-
-App.propTypes = {};
 
 export { App };

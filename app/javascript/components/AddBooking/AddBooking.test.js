@@ -1,11 +1,13 @@
-import Enzyme, { mount, shallow, render } from "enzyme";
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import { AddBooking } from "components/AddBooking";
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({
+  adapter: new Adapter()
+});
 
 test("AddBooking form renders without an error", () => {
   const app = shallow(<AddBooking />);
@@ -39,15 +41,18 @@ describe("Test handlechange component", () => {
     const newName = "drew";
 
     app.find("#contact_first_name").simulate("change", {
-      target: { name: "contact_first_name", value: newName }
+      target: {
+        name: "contact_first_name",
+        value: newName
+      }
     });
     app.find("#button").simulate("click");
     expect(mockCallBack.mock.calls[0]).toEqual([
       {
+        contact_email: "",
         contact_first_name: newName,
         contact_last_name: "",
         contact_phone_number: "",
-        contact_email: "",
         contact_relationship: "",
         reference: ""
       }

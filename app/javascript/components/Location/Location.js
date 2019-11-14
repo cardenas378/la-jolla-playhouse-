@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import {
-  StyledCardLabel,
-  StyledCardTitle,
-  StyledTertiaryHeading,
-  StyledCardMeta,
-  StyledBodyCopy
-} from "../styles/Typography";
+import { StyledCardLabel, StyledCardTitle } from "../styles/Typography";
 
 import { StyledLocationCard } from "./Location.styles";
 import { LocationContact } from "./LocationContact";

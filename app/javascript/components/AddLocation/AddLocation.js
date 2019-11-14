@@ -1,7 +1,5 @@
-import { textInputs } from "polished";
 import PropTypes from "prop-types";
 import React from "react";
-import { Redirect } from "react-router-dom";
 
 import { States } from "../../utils/States";
 import { StyledFormLayout } from "../styles/Forms";

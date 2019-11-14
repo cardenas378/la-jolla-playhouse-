@@ -1,11 +1,14 @@
-import Enzyme, { mount, shallow, render } from "enzyme";
+/* eslint-disable max-statements */
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import { AddLocation } from "components/AddLocation";
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({
+  adapter: new Adapter()
+});
 
 test("AddLocation form renders without an error", () => {
   const app = shallow(<AddLocation />);
@@ -46,7 +49,10 @@ test("If Type is a school", () => {
   const school = shallow(<AddLocation />);
 
   school.find("#school").simulate("change", {
-    target: { name: "location_type", value: "School" }
+    target: {
+      name: "location_type",
+      value: "School"
+    }
   });
 
   expect(school.find("#school_principal").exists()).toEqual(true);
@@ -58,7 +64,10 @@ test("If Type is a non-profit", () => {
   const other = shallow(<AddLocation />);
 
   other.find("#corporate").simulate("change", {
-    target: { name: "location_type", value: "Corporate" }
+    target: {
+      name: "location_type",
+      value: "Corporate"
+    }
   });
 
   expect(other.find("#county_district").exists()).toEqual(true);
@@ -69,7 +78,10 @@ test("If Type is a corporate", () => {
   const other = shallow(<AddLocation />);
 
   other.find("#non-profit").simulate("change", {
-    target: { name: "location_type", value: "Non-Profit" }
+    target: {
+      name: "location_type",
+      value: "Non-Profit"
+    }
   });
 
   expect(other.find("#county_district").exists()).toEqual(true);
@@ -83,31 +95,34 @@ describe("Test handlechange component", () => {
     const app = shallow(<AddLocation handleNewLocation={mockCallBack} />);
     const newName = "juan";
 
-    app
-      .find("#name")
-      .simulate("change", { target: { name: "name", value: newName } });
+    app.find("#name").simulate("change", {
+      target: {
+        name: "name",
+        value: newName
+      }
+    });
     app.find("#button").simulate("click");
     expect(mockCallBack.mock.calls[0]).toEqual([
       {
-        name: newName,
-        location_type: "",
-        contact_first_name: "",
-        contact_last_name: "",
-        contact_phone_number: "",
-        contact_email: "",
-        contact_relationship: "",
         address_1: "",
         address_2: "",
         address_city: "San Diego",
         address_state: "CA",
         address_zip: "",
+        city_district: "",
+        contact_email: "",
+        contact_first_name: "",
+        contact_last_name: "",
+        contact_phone_number: "",
+        contact_relationship: "",
+        county_district: "",
+        location_type: "",
+        name: newName,
         phone_number: "",
+        principal_email: "",
         reference: "",
         school_principal: "",
-        principal_email: "",
-        school_district: "",
-        county_district: "",
-        city_district: ""
+        school_district: ""
       }
     ]);
   });

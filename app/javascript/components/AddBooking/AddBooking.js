@@ -1,15 +1,8 @@
-import { textInputs } from "polished";
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  Redirect,
-  BrowserRouter as Router,
-  Route,
-  Link
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import { BookingSectionHeader } from "../FormSectionHeader";
-import { Icon } from "../Icon";
 import { StyledFormLayout } from "../styles/Forms";
 import { BookingSlideOutPanel } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
@@ -40,7 +33,9 @@ class AddBooking extends React.Component {
     const { name, value } = e.target;
 
     form[name] = value;
-    this.setState({ form });
+    this.setState({
+      form
+    });
   };
 
   handleClick = () => {
@@ -57,8 +52,7 @@ class AddBooking extends React.Component {
       contact_last_name,
       contact_phone_number,
       contact_email,
-      contact_relationship,
-      reference
+      contact_relationship
     } = this.state.form;
 
     return (
@@ -67,13 +61,12 @@ class AddBooking extends React.Component {
           location_name={this.props.location_name}
           name="Add a Booking"
         />
-
         <BookingSlideOutPanel>
           <BookingSectionHeader name="BOOKING CONTACT" />
           <form>
             <StyledFormLayout>
               <div className="half">
-                <StyledLabel>First Name</StyledLabel>
+                <StyledLabel> First Name </StyledLabel>{" "}
                 <BookingInput
                   id="contact_first_name"
                   name="contact_first_name"
@@ -81,10 +74,10 @@ class AddBooking extends React.Component {
                   placeholder="First Name"
                   type="text"
                   value={contact_first_name}
-                />
-              </div>
+                />{" "}
+              </div>{" "}
               <div className="half">
-                <StyledLabel>Last Name</StyledLabel>
+                <StyledLabel> Last Name </StyledLabel>{" "}
                 <BookingInput
                   id="contact_last_name"
                   name="contact_last_name"
@@ -92,10 +85,10 @@ class AddBooking extends React.Component {
                   placeholder="Last Name"
                   type="text"
                   value={contact_last_name}
-                />
-              </div>
+                />{" "}
+              </div>{" "}
               <div className="half">
-                <StyledLabel>Phone Number</StyledLabel>
+                <StyledLabel> Phone Number </StyledLabel>{" "}
                 <BookingInput
                   id="contact_phone_number"
                   name="contact_phone_number"
@@ -103,10 +96,10 @@ class AddBooking extends React.Component {
                   placeholder="(xxx) xxx-xxxx"
                   type="text"
                   value={contact_phone_number}
-                />
-              </div>
+                />{" "}
+              </div>{" "}
               <div className="half">
-                <StyledLabel>Email Address</StyledLabel>
+                <StyledLabel> Email Address </StyledLabel>{" "}
                 <BookingInput
                   id="contact_email"
                   name="contact_email"
@@ -114,10 +107,10 @@ class AddBooking extends React.Component {
                   placeholder="example@email.com"
                   type="text"
                   value={contact_email}
-                />
-              </div>
+                />{" "}
+              </div>{" "}
               <div className="half">
-                <StyledLabel>Relationship to Location</StyledLabel>
+                <StyledLabel> Relationship to Location </StyledLabel>{" "}
                 <BookingInput
                   id="contact_relationship"
                   name="contact_relationship"
@@ -125,21 +118,21 @@ class AddBooking extends React.Component {
                   placeholder=" Event Coordinator"
                   type="text"
                   value={contact_relationship}
-                />
-              </div>
+                />{" "}
+              </div>{" "}
               <div className="full align-right">
                 <SaveBookingButton
                   id="button"
                   onClick={this.handleClick}
                   type="button"
                 >
-                  SAVE BOOKING
-                </SaveBookingButton>
-              </div>
-              {success && <Redirect to="/" />}
-            </StyledFormLayout>
-          </form>
-        </BookingSlideOutPanel>
+                  SAVE BOOKING{" "}
+                </SaveBookingButton>{" "}
+              </div>{" "}
+              {success && <Redirect to="/" />}{" "}
+            </StyledFormLayout>{" "}
+          </form>{" "}
+        </BookingSlideOutPanel>{" "}
       </>
     );
   }
