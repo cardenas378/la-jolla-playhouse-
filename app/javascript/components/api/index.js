@@ -23,4 +23,17 @@ const findLocation = function(id) {
   });
 };
 
-export { getLocations, createLocation, findLocation };
+const createBooking = function(attributes) {
+  return fetch("/bookings", {
+    method: "POST",
+    headers: {
+      "X-CSRF-TOKEN": document.querySelector("[name=csrf-token]").content,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ booking: attributes })
+  }).then(resp => {
+    return resp.json();
+  });
+};
+
+export { getLocations, createLocation, findLocation, createBooking };

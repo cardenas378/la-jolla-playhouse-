@@ -13,7 +13,7 @@ import { Home } from "../../Pages/Home";
 import { Locations } from "../../Pages/Locations";
 import { AddBooking } from "../AddBooking";
 import { AddLocation } from "../AddLocation";
-import { getLocations, createLocation } from "../api";
+import { getLocations, createLocation, createBooking } from "../api";
 import { NavBar } from "../NavBar";
 import GlobalStyle from "../styles/Global";
 import Theme from "../styles/Theme";
@@ -49,6 +49,10 @@ class App extends React.Component {
 
   handleNewLocation = location => {
     createLocation(location);
+  };
+
+  handleNewBooking = booking => {
+    createBooking(booking);
   };
 
   render() {
@@ -95,7 +99,11 @@ class App extends React.Component {
                 path="/AddBooking/:location_id"
                 render={props => {
                   return (
-                    <AddBooking {...props} locations={this.state.locations} />
+                    <AddBooking
+                      {...props}
+                      handleNewBooking={this.handleNewBooking}
+                      locations={this.state.locations}
+                    />
                   );
                 }}
               />

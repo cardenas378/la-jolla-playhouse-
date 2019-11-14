@@ -26,8 +26,7 @@ class AddBooking extends React.Component {
         contact_last_name: "",
         contact_phone_number: "",
         contact_email: "",
-        contact_relationship: "",
-        reference: ""
+        contact_relationship_to_location: ""
       },
       locationID: this.props.match.params.location_id,
       location: ""
@@ -36,7 +35,18 @@ class AddBooking extends React.Component {
 
   componentDidMount() {
     findLocation(this.state.locationID).then(foundLocation => {
-      this.setState({ location: foundLocation, form: foundLocation });
+      const newLocation = {
+        contact_first_name: foundLocation.contact_first_name,
+        contact_last_name: foundLocation.contact_last_name,
+        contact_phone_number: foundLocation.contact_phone_number,
+        contact_email: foundLocation.contact_email,
+        contact_relationship_to_location: foundLocation.contact_relationship
+      };
+
+      this.setState({
+        location: foundLocation.name,
+        form: newLocation
+      });
     });
   }
 
@@ -55,18 +65,19 @@ class AddBooking extends React.Component {
   };
 
   render() {
+    console.log(this.state.form);
     const {
       contact_first_name,
       contact_last_name,
       contact_phone_number,
       contact_email,
-      contact_relationship,
+      contact_relationship_to_location,
       reference
     } = this.state.form;
 
     return (
       <>
-        <AddBookingHeader location_name={this.state.location.name} />
+        <AddBookingHeader location_name={this.state.location} />
 
         <BookingSlideOutPanel>
           <BookingSectionHeader name="BOOKING CONTACT" />
@@ -119,12 +130,12 @@ class AddBooking extends React.Component {
               <div className="half">
                 <StyledLabel>Relationship to Location</StyledLabel>
                 <BookingInput
-                  id="contact_relationship"
-                  name="contact_relationship"
+                  id="contact_relationship_to_location"
+                  name="contact_relationship_to_location"
                   onChange={this.handleChange}
                   placeholder=" Event Coordinator"
                   type="text"
-                  value={contact_relationship}
+                  value={contact_relationship_to_location}
                 />
               </div>
               <div className="full align-right">

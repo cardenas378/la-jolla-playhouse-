@@ -28,7 +28,7 @@ test("AddBooking tests all fields of input", () => {
   expect(app.find("#contact_last_name").exists()).toEqual(true);
   expect(app.find("#contact_phone_number").exists()).toEqual(true);
   expect(app.find("#contact_email").exists()).toEqual(true);
-  expect(app.find("#contact_relationship").exists()).toEqual(true);
+  expect(app.find("#contact_relationship_to_location").exists()).toEqual(true);
   expect(app.find("#button").exists()).toEqual(true);
 });
 
@@ -54,8 +54,7 @@ describe("Test handlechange component", () => {
         contact_last_name: "",
         contact_phone_number: "",
         contact_email: "",
-        contact_relationship: "",
-        reference: ""
+        contact_relationship_to_location: ""
       }
     ]);
   });
