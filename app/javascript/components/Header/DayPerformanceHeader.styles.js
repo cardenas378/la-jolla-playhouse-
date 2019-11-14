@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 const DayPerformanceStyledHeader = styled.header`
-//   background-color: ${props => props.theme.funBlue};
-//   border-radius: 0px 0px 0 30px;
-//   padding: 40px 30px 90px;
-
   h2 {
     color: ${props => props.theme.funBlue};
     font-family: ${props => props.theme.nunito};

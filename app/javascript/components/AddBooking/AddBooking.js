@@ -40,7 +40,6 @@ class AddBooking extends React.Component {
         performance_date: ""
       }
     };
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   static defaultProps = {
@@ -73,8 +72,6 @@ class AddBooking extends React.Component {
       reference,
       performance_date
     } = this.state.form;
-
-    console.log(this.state.form.performance_date);
 
     return (
       <>
