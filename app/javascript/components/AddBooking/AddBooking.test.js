@@ -49,7 +49,8 @@ describe("Test handlechange component", () => {
         contact_phone_number: "",
         contact_email: "",
         contact_relationship: "",
-        reference: ""
+        reference: "",
+        performance_date: ""
       }
     ]);
   });
