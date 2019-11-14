@@ -1,4 +1,5 @@
 import { textInputs } from "polished";
+import PropTypes from "prop-types";
 import React from "react";
 import {
   Redirect,
@@ -43,7 +44,7 @@ class AddBooking extends React.Component {
   }
 
   static defaultProps = {
-    location_id: "JSC Innovation Lab"
+    location_name: "JSC Innovation Lab"
   };
 
   handleChange = e => {
@@ -78,7 +79,7 @@ class AddBooking extends React.Component {
     return (
       <>
         <AddBookingHeader
-          location_id={this.props.location_id}
+          location_name={this.props.location_name}
           name="Add a Booking"
         />
 
@@ -179,4 +180,9 @@ class AddBooking extends React.Component {
     );
   }
 }
+
+AddBooking.propTypes = {
+  handleNewBooking: PropTypes.func,
+  success: PropTypes.bool
+};
 export { AddBooking };

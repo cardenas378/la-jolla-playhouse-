@@ -1,9 +1,16 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Link
+} from "react-router-dom";
 
 import styled, { ThemeProvider } from "styled-components/macro";
 
 import { Home } from "../../Pages/Home";
+import { Locations } from "../../Pages/Locations";
 import { AddBooking } from "../AddBooking";
 import { AddLocation } from "../AddLocation";
 import { getLocations, createLocation } from "../api";
@@ -35,6 +42,12 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    getLocations().then(locations => {
+      this.setState({ locations });
+    });
+  }
+
   handleNewLocation = location => {
     createLocation(location).then(location => {
       this.setState({ success: true });
@@ -55,7 +68,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { locations } = this.state;
+    const { locations, success } = this.state;
 
     return (
       <ThemeProvider theme={Theme}>
@@ -73,7 +86,22 @@ class App extends React.Component {
                     <AddLocation
                       {...props}
                       handleNewLocation={this.handleNewLocation}
-                      success={this.state.success}
+                      success={success}
+                    />
+                  );
+                }}
+              />
+
+              <Route
+                exact
+                path="/Locations"
+                render={props => {
+                  return (
+                    <Locations
+                      {...props}
+                      changeSuccess={this.changeSuccess}
+                      locations={locations}
+                      success={success}
                     />
                   );
                 }}
@@ -83,14 +111,7 @@ class App extends React.Component {
                 exact
                 path="/"
                 render={props => {
-                  return (
-                    <Home
-                      {...props}
-                      changeSuccess={this.changeSuccess}
-                      locations={this.state.locations}
-                      success={this.state.success}
-                    />
-                  );
+                  return <Home {...props} />;
                 }}
               />
 
@@ -115,4 +136,7 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {};
+
 export { App };

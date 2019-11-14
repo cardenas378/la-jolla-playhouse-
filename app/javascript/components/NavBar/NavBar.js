@@ -13,7 +13,7 @@ const NavBar = () => (
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/AddLocation">Add Location</Link>
+        <Link to="/Locations">Locations</Link>
       </li>
       <li>
         <Link to="/AddBooking">Add Booking</Link>
@@ -21,10 +21,10 @@ const NavBar = () => (
     </ol>
     <ol className="btm-nav">
       <li>
-        <Link>Settings</Link>
+        <Link to="">Settings</Link>
       </li>
       <li>
-        <Link>Logout</Link>
+        <Link to="">Logout</Link>
       </li>
     </ol>
   </StyledAside>

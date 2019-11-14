@@ -1,3 +1,5 @@
+import { Home } from "../Pages/Home";
+
 import { AddBooking } from "./AddBooking";
 import { AddLocation } from "./AddLocation";
 import { App } from "./App";
@@ -5,6 +7,8 @@ import { SubmitButton, SaveBookingButton } from "./Buttons";
 import { FormSectionHeader, BookingSectionHeader } from "./FormSectionHeader";
 import { AddBookingHeader, Header, DayPerformanceHeader } from "./Header";
 import { Icon } from "./Icon";
+import { AddLocationLink } from "./Links";
+import { Location } from "./Location";
 import { Logo } from "./Logo";
 import { PerformanceDateCalendar } from "./PerformanceDateCalendar";
 import { RadioButton } from "./RadioButton";
@@ -22,8 +26,9 @@ export {
   AddLocation,
   AddBooking,
   SubmitButton,
+  AddLocationLink,
   SaveBookingButton,
-  // Home
+  Home,
   StyledSelect,
   FormSectionHeader,
   BookingSectionHeader,
@@ -35,8 +40,8 @@ export {
   RadioButton,
   FullInput,
   HalfInput,
-  BookingInput,
   ThirdInput,
+  BookingInput,
   PerformanceDateInput,
   PerformanceDateCalendar
 };
