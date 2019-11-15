@@ -5,7 +5,7 @@ class PerformanceDatesController < ApplicationController
   end
 
   def show
-    @performance_date = PerformanceDates.find([params[:id]])
+    @performance_date = PerformanceDates.find(params[:id])
     render json: @performance_date
   end
 

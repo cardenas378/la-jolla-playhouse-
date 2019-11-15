@@ -17,7 +17,6 @@ test("AddBooking renders without crashing", () => {
   const div = document.createElement("div");
 
   ReactDOM.render(<AddBooking />, div);
-  ReactDOM.unmountComponentAtNode(div);
 });
 
 test("AddBooking tests all fields of input", () => {
@@ -28,6 +27,8 @@ test("AddBooking tests all fields of input", () => {
   expect(app.find("#contact_phone_number").exists()).toEqual(true);
   expect(app.find("#contact_email").exists()).toEqual(true);
   expect(app.find("#contact_relationship").exists()).toEqual(true);
+  expect(app.find("#PerformanceDate").exists()).toEqual(true);
+  expect(app.find("#WorkshopDate").exists()).toEqual(true);
   expect(app.find("#button").exists()).toEqual(true);
 });
 
@@ -50,7 +51,8 @@ describe("Test handlechange component", () => {
         contact_email: "",
         contact_relationship: "",
         reference: "",
-        performance_date: ""
+        performance_date: "",
+        workshop_date: ""
       }
     ]);
   });

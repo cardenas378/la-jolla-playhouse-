@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledPerformanceDateCalendar = styled.div`
+const StyledCalendar = styled.div`
   svg {
     height: 30px;
     width: 25px;
@@ -13,4 +13,4 @@ const StyledPerformanceDateCalendar = styled.div`
   }
 `;
 
-export { StyledPerformanceDateCalendar };
+export { StyledCalendar };

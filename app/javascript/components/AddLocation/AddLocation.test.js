@@ -17,7 +17,6 @@ test("AddLocation renders without crashing", () => {
   const div = document.createElement("div");
 
   ReactDOM.render(<AddLocation />, div);
-  ReactDOM.unmountComponentAtNode(div);
 });
 
 test("AddLocation tests all fields of input", () => {

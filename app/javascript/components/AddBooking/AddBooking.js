@@ -8,13 +8,13 @@ import {
   Link
 } from "react-router-dom";
 
+import { Calendar } from "../Calendar";
 import { BookingSectionHeader } from "../FormSectionHeader";
 import { Icon } from "../Icon";
-import { PerformanceDateCalendar } from "../PerformanceDateCalendar/PerformanceDateCalendar";
 import { StyledFormLayout } from "../styles/Forms";
 import {
   BookingSlideOutPanel,
-  DayPerformanceSlideOutPanel
+  PerformanceWorkshopSlideOutPanel
 } from "../styles/SlideOutPanel";
 import { StyledLabel } from "../styles/Typography";
 import { PerformanceDateInput } from "../TextInput";
@@ -23,7 +23,8 @@ import {
   AddBookingHeader,
   SaveBookingButton,
   BookingInput,
-  DayPerformanceHeader
+  DayPerformanceHeader,
+  WorkshopDateHeader
 } from "..";
 
 class AddBooking extends React.Component {
@@ -37,7 +38,8 @@ class AddBooking extends React.Component {
         contact_email: "",
         contact_relationship: "",
         reference: "",
-        performance_date: ""
+        performance_date: "",
+        workshop_date: ""
       }
     };
   }
@@ -70,7 +72,8 @@ class AddBooking extends React.Component {
       contact_email,
       contact_relationship,
       reference,
-      performance_date
+      performance_date,
+      workshop_date
     } = this.state.form;
 
     return (
@@ -144,21 +147,37 @@ class AddBooking extends React.Component {
           </form>
         </BookingSlideOutPanel>
 
-        <DayPerformanceSlideOutPanel>
+        <PerformanceWorkshopSlideOutPanel>
           <StyledFormLayout>
             <div className="half">
               <DayPerformanceHeader name="PERFORMANCES" />
               <StyledLabel>Day of Performance(s)</StyledLabel>
               <div>
                 <PerformanceDateInput
-                  id="performance_date"
+                  id="PerformanceDate"
                   name="performance_date"
                   onChange={this.handleChange}
                   type="date"
                   value={performance_date}
                 />
               </div>
-              <PerformanceDateCalendar />
+              <Calendar />
+            </div>
+          </StyledFormLayout>
+          <StyledFormLayout>
+            <div className="half">
+              <WorkshopDateHeader name="WORKSHOPS" />
+              <StyledLabel>Day of Workshop(s)</StyledLabel>
+              <div>
+                <PerformanceDateInput
+                  id="WorkshopDate"
+                  name="workshop_date"
+                  onChange={this.handleChange}
+                  type="date"
+                  value={workshop_date}
+                />
+              </div>
+              <Calendar />
             </div>
 
             <div className="full align-right">
@@ -172,7 +191,7 @@ class AddBooking extends React.Component {
             </div>
             {success && <Redirect to="/" />}
           </StyledFormLayout>
-        </DayPerformanceSlideOutPanel>
+        </PerformanceWorkshopSlideOutPanel>
       </>
     );
   }

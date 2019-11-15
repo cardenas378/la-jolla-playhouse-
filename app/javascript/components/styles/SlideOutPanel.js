@@ -24,7 +24,7 @@ const BookingSlideOutPanel = styled.div`
   margin-top: -65px;
 `;
 
-const DayPerformanceSlideOutPanel = styled.div`
+const PerformanceWorkshopSlideOutPanel = styled.div`
   box-sizing: border-box;
   border-radius: 30px 0px 0px 0px;
   padding: 30px ${props => props.theme.contentPaddingLeft};
@@ -36,5 +36,5 @@ const DayPerformanceSlideOutPanel = styled.div`
 export {
   StyledSlideOutPanel,
   BookingSlideOutPanel,
-  DayPerformanceSlideOutPanel
+  PerformanceWorkshopSlideOutPanel
 };
