@@ -1,3 +1,3 @@
-class WorkshopDates < ApplicationRecord
+class WorkshopDate < ApplicationRecord
   belongs_to :booking
 end

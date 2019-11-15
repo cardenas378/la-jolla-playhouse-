@@ -24,8 +24,8 @@ class WorkshopDatesController < ApplicationController
   end
 
   def destroy
-    @performance_date = WorkshopDate.find(params[:id])
-    @performance_date.destroy
+    @workshop_date = WorkshopDate.find(params[:id])
+    @workshop_date.destroy
   end
 
   private

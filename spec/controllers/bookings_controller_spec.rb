@@ -5,13 +5,13 @@ RSpec.describe BookingsController, type: :controller do
   context 'GET #index' do
     it 'returns a success response' do
       get :index
-      expect(response).to have_http_status(200) # response.success?
+      expect(response).to have_http_status(200)
     end
 
     it 'checks bookings being created in the response' do
       Booking.create(location_id: location.id, contact_first_name: "Nico")
       get :index
-      expect(response.body).to include("Nico") # response.success?
+      expect(response.body).to include("Nico")
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe BookingsController, type: :controller do
     it 'can create a booking' do
       post :create, params: { booking: { location_id: location.id,
                                          contact_first_name: "Nico" }, format: :json }
-      expect(response.body).to include("Nico") # response.success?
+      expect(response.body).to include("Nico")
     end
   end
 

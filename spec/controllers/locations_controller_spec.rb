@@ -4,7 +4,7 @@ RSpec.describe LocationsController, type: :controller do
   context 'GET #index' do
     it 'returns a success response' do
       get :index
-      expect(response).to have_http_status(200) # response.success?
+      expect(response).to have_http_status(200)
     end
     it 'checks location being created in the response' do
       Location.create(name: "Test Again")
