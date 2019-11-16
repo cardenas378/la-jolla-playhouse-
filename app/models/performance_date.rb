@@ -1,3 +1,3 @@
-class Performance < ApplicationRecord
+class PerformanceDate < ApplicationRecord
   belongs_to :booking
 end

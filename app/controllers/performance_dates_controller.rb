@@ -1,21 +1,21 @@
 class PerformanceDatesController < ApplicationController
   def index
-    @performance_dates = PerformanceDates.all
+    @performance_dates = PerformanceDate.all
     render json: @performance_dates
   end
 
   def show
-    @performance_date = PerformanceDates.find([params[:id]])
+    @performance_date = PerformanceDate.find(params[:id])
     render json: @performance_date
   end
 
   def create
-    @performance_date = PerformanceDates.create(performance_date_params)
+    @performance_date = PerformanceDate.create(performance_date_params)
     render json: @performance_date
   end
 
   def update
-    @performance_date = PerformanceDates.find(params[:id])
+    @performance_date = PerformanceDate.find(params[:id])
     if @performance_date.update(performance_date_params)
       render json: @performance_date
     else
@@ -24,13 +24,13 @@ class PerformanceDatesController < ApplicationController
   end
 
   def destroy
-    @performance_date = PerformanceDates.find(params[:id])
+    @performance_date = PerformanceDate.find(params[:id])
     @performance_date.destroy
   end
 
   private
 
   def performance_date_params
-    params.require(:performance_date).permit(:date, :booking_id)
+    params.require(:performance_dates).permit(:date, :booking_id)
   end
 end
